@@ -15,7 +15,7 @@ namespace PotterShoppingCart
         private double CalculateDiscount(List<BOOK> _books)
         {
             double DiscountAmount = _books.Sum(item => item.Cost);
-            switch (Orders.Count) {
+            switch (_books.Count) {
                 case 1:
                     DiscountAmount *= 1.0;
                         break;
