@@ -45,6 +45,22 @@ namespace PotterShoppingCart.Tests
             var expected = 190;
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        //Scenario: 一二三集各買了一本，價格應為100*3*0.9=270
+        public void TEST_Buy_episode_1_And_2_And_3_Should_Be_270()
+        {
+            //Arrange
+            ShoppingCart target = new ShoppingCart();
+            target.PickUp(new BOOK { Name = "Holly Potter 1", Cost = 100 });
+            target.PickUp(new BOOK { Name = "Holly Potter 2", Cost = 100 });
+            target.PickUp(new BOOK { Name = "Holly Potter 3", Cost = 100 });
 
+            //Act
+            var actual = target.CalculateTotalAmount();
+
+            //Assert
+            var expected = 270;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
