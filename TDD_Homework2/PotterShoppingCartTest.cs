@@ -25,7 +25,7 @@ namespace PotterShoppingCart.Tests
 
             //Assert
             var expected = 100;
-            Assert.AreEqual(expected, 0);
+            Assert.AreEqual(expected, actual);
 
         }
 
