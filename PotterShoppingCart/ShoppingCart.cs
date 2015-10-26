@@ -12,9 +12,9 @@ namespace PotterShoppingCart
             Orders.Add(book);
         }
 
-        private double CalculateDiscount()
+        private double CalculateDiscount(List<BOOK> _books)
         {
-            double DiscountAmount = Orders.Sum(item => item.Cost);
+            double DiscountAmount = _books.Sum(item => item.Cost);
             switch (Orders.Count) {
                 case 1:
                     DiscountAmount *= 1.0;
@@ -37,10 +37,7 @@ namespace PotterShoppingCart
 
         public double CalculateTotalAmount()
         {
-
-
-            return CalculateDiscount();
-
+            return CalculateDiscount(Orders);
         }
     }
 }
