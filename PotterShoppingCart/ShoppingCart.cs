@@ -28,6 +28,9 @@ namespace PotterShoppingCart
                 case 4:
                     DiscountAmount *= 0.8;
                     break;
+                case 5:
+                    DiscountAmount *= 0.75;
+                    break;
             }
             return DiscountAmount;
         }
