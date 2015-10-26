@@ -51,7 +51,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="PotterShoppingCartTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="UserStory.txt" />
@@ -61,6 +60,9 @@
       <Project>{14DC4E1D-E282-426D-96A5-9A0A7DBDE316}</Project>
       <Name>PotterShoppingCart</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
