@@ -12,9 +12,26 @@ namespace PotterShoppingCart
             Orders.Add(book);
         }
 
-        public int CalculateTotalAmount()
+        private double CalculateDiscount()
         {
-            return Orders.Sum(item => item.Cost);
+            double DiscountAmount = Orders.Sum(item => item.Cost);
+            switch (Orders.Count) {
+                case 1:
+                    DiscountAmount *= 1.0;
+                        break;
+                case 2:
+                    DiscountAmount *= 0.95;
+                    break;
+            }
+            return DiscountAmount;
+        }
+
+        public double CalculateTotalAmount()
+        {
+
+
+            return CalculateDiscount();
+
         }
     }
 }
