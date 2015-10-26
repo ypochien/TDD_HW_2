@@ -45,6 +45,7 @@ namespace PotterShoppingCart.Tests
             var expected = 190;
             Assert.AreEqual(expected, actual);
         }
+
         [TestMethod]
         //Scenario: 一二三集各買了一本，價格應為100*3*0.9=270
         public void TEST_Buy_episode_1_And_2_And_3_Should_Be_270()
@@ -62,6 +63,7 @@ namespace PotterShoppingCart.Tests
             var expected = 270;
             Assert.AreEqual(expected, actual);
         }
+
         [TestMethod]
         //Scenario: 一二三四集各買了一本，價格應為100*4*0.8=320
         public void TEST_Buy_episode_1_And_2_And_3_And_4_Should_Be_320()
@@ -78,6 +80,26 @@ namespace PotterShoppingCart.Tests
 
             //Assert
             var expected = 320;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        //Scenario: 一次買了整套，一二三四五集各買了一本，價格應為100*5*0.75=375
+        public void TEST_Buy_episode_1_And_2_And_3_And_4_And_5_Should_Be_375()
+        {
+            //Arrange
+            ShoppingCart target = new ShoppingCart();
+            target.PickUp(new BOOK { Name = "Holly Potter 1", Cost = 100 });
+            target.PickUp(new BOOK { Name = "Holly Potter 2", Cost = 100 });
+            target.PickUp(new BOOK { Name = "Holly Potter 3", Cost = 100 });
+            target.PickUp(new BOOK { Name = "Holly Potter 4", Cost = 100 });
+            target.PickUp(new BOOK { Name = "Holly Potter 5", Cost = 100 });
+
+            //Act
+            var actual = target.CalculateTotalAmount();
+
+            //Assert
+            var expected = 375;
             Assert.AreEqual(expected, actual);
         }
     }
